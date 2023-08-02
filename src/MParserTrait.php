@@ -41,4 +41,35 @@ trait MParserTrait {
         $argArray = explode(',', $args);
         return intval($argArray[0]) == 0 ? 0 : ($token / intval($argArray[0]));
     }
+
+    public function _power($token, $args)
+    {
+        $argArray = explode(',', $args);
+        return $token ** intval($argArray[0]);
+    }
+
+    public function _upper($token, $args) {
+        return strtoupper($token);
+    }
+
+    public function _lower($token, $args) {
+        return strtolower($token);
+    }
+
+    public function _capitalize($token, $args) {
+        return ucfirst(strtolower($token));
+    }
+
+    public function _replace($token, $args) {
+        $argsArr = explode(',', $args);
+        return str_replace($argsArr[0], $argsArr[1], $token);
+    }
+
+    public function _length($token, $args) {
+        return strlen($token);
+    }
+
+    public function _concat($token, $args) {
+        return $token . $args;
+    }
 }
