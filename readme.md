@@ -230,7 +230,7 @@ class ChildParser extends MParser
 {
     function __construct($string, array $dataset)
     {
-        parent::__construct($string, array $dataset);
+        parent::__construct($string, $dataset);
     }
 
     public function _reverse($token, $args)
