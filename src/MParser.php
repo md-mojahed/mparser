@@ -14,7 +14,7 @@ class MParser {
     private $dataset = [];
 
     public static function parse($str, $dataset) {
-        return (new MParser($str, $dataset))->_parse();
+        return (new static($str, $dataset))->_parse();
     }
 
     public function __construct($str, $dataset) {
