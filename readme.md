@@ -37,11 +37,12 @@ Splits the token and returns the value at the specified index.
 
 **Example:**
 ```php
-$data = ['numbers' => '1,2,3,4,5'];
-$string = "The second number is: <<numbers>[exp(, 2)]>.";
+$data = ['numbers' => '1-2-3-4-5'];
+$string = "The second number is: <<numbers>[exp(-, 2)]>.";
 
 // Result: "The second number is: 2."
 ```
+!Note : exp doesn't supports (,) comma as first parameter
 
 ### `cut`
 
