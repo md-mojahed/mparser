@@ -70,6 +70,9 @@ class MParser {
         preg_match($this->method_pattern, $expression, $methodMatch);
         preg_match($this->argument_pattern, $expression, $argMatch);
 
+        if(count($methodMatch) == 0 || count($argMatch) == 0) {
+            return $token;
+        }
         $method = '_' . substr($methodMatch[0], 1);
         $args = substr($argMatch[0], 1, -1);
         // Check if the method exists in the MParserTrait
