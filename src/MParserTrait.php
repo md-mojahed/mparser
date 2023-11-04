@@ -22,30 +22,30 @@ trait MParserTrait {
 
     public function _sum($token, $args) {
         $argsArr = explode(',', $args);
-        return $token + intval($argsArr[0]);
+        return floatval($token) + intval($argsArr[0]);
     }
 
     public function _sub($token, $args) {
         $argsArr = explode(',', $args);
-        return $token - intval($argsArr[0]);
+        return floatval($token) - intval($argsArr[0]);
     }
 
     public function _mul($token, $args)
     {
         $argArray = explode(',', $args);
-        return $token * intval($argArray[0]);
+        return floatval($token) * intval($argArray[0]);
     }
 
     public function _div($token, $args)
     {
         $argArray = explode(',', $args);
-        return intval($argArray[0]) == 0 ? 0 : ($token / intval($argArray[0]));
+        return intval($argArray[0]) == 0 ? 0 : (floatval($token) / intval($argArray[0]));
     }
 
     public function _power($token, $args)
     {
         $argArray = explode(',', $args);
-        return $token ** intval($argArray[0]);
+        return floatval($token) ** intval($argArray[0]);
     }
 
     public function _upper($token, $args) {
