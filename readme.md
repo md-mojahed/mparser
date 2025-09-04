@@ -1,8 +1,8 @@
 # MParser - Powerful String Parsing Library
 
-[![Latest Version](https://img.shields.io/github/tag/mojahed/mparser.svg?style=flat-square)](https://github.com/mojahed/mparser/tags)
+[![Latest Version](https://img.shields.io/github/tag/md-mojahed/mparser.svg?style=flat-square)](https://github.com/md-mojahed/mparser/tags)
 [![Total Downloads](https://img.shields.io/packagist/dt/mojahed/mparser.svg?style=flat-square)](https://packagist.org/packages/mojahed/mparser)
-[![GitHub stars](https://img.shields.io/github/stars/mojahed/mparser?style=flat-square)](https://github.com/mojahed/mparser/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/md-mojahed/mparser?style=flat-square)](https://github.com/md-mojahed/mparser/stargazers)
 ![GitHub views](https://komarev.com/ghpvc/?username=mojahed&repo=mparser&style=flat-square)
 
 MParser is a PHP package that simplifies parsing complex strings with custom tokens and expressions. It allows you to effortlessly create and extend parsing functionality using a flexible trait-based architecture. Easily integrate MParser into your projects for efficient string processing and data extraction in a user-friendly manner.
