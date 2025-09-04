@@ -1,5 +1,10 @@
 # MParser - Powerful String Parsing Library
 
+[![Latest Version](https://img.shields.io/github/tag/moj4hed/mparser.svg?style=flat-square)](https://github.com/moj4hed/mparser/tags)
+[![Total Downloads](https://img.shields.io/packagist/dt/mojahed/mparser.svg?style=flat-square)](https://packagist.org/packages/mojahed/mparser)
+[![GitHub stars](https://img.shields.io/github/stars/moj4hed/mparser?style=flat-square)](https://github.com/moj4hed/mparser/stargazers)
+![GitHub views](https://komarev.com/ghpvc/?username=moj4hed&repo=mparser&style=flat-square)
+
 MParser is a PHP package that simplifies parsing complex strings with custom tokens and expressions. It allows you to effortlessly create and extend parsing functionality using a flexible trait-based architecture. Easily integrate MParser into your projects for efficient string processing and data extraction in a user-friendly manner.
 
 ## Installation
@@ -38,7 +43,7 @@ Splits the token and returns the value at the specified index.
 **Example:**
 ```php
 $data = ['numbers' => '1-2-3-4-5'];
-$string = "The second number is: <<numbers>[exp(-, 2)]>.";
+$string = "The second number is: {{numbers}[exp(-, 2)]}.";
 
 // Result: "The second number is: 2."
 ```
@@ -51,7 +56,7 @@ Extracts a substring from the token based on the start and length specified.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The first three letters are: <<word>[cut(1, 3)]>.";
+$string = "The first three letters are: {{word}[cut(1, 3)]}.";
 
 // Result: "The first three letters are: hel."
 ```
@@ -63,7 +68,7 @@ Extracts a substring from the end of the token based on the length specified.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The last three letters are: <<word>[cut_back(3)]>.";
+$string = "The last three letters are: {{word}[cut_back(3)]}.";
 
 // Result: "The last three letters are: llo."
 ```
@@ -75,7 +80,7 @@ Reverses the characters of the token.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The reversed word is: <<word>[reverse()]>.";
+$string = "The reversed word is: {{word}[reverse()]}.";
 
 // Result: "The reversed word is: olleh."
 ```
@@ -87,7 +92,7 @@ Adds the specified number to the token (assumed to be numeric).
 **Example:**
 ```php
 $data = ['number' => 5];
-$string = "The sum is: <<number>[sum(10)]>.";
+$string = "The sum is: {{number}[sum(10)]}.";
 
 // Result: "The sum is: 15."
 ```
@@ -99,7 +104,7 @@ Subtracts the specified number from the token (assumed to be numeric).
 **Example:**
 ```php
 $data = ['number' => 15];
-$string = "The difference is: <<number>[sub(10)]>.";
+$string = "The difference is: {{number}[sub(10)]}.";
 
 // Result: "The difference is: 5."
 ```
@@ -111,7 +116,7 @@ Multiplies the token with the specified number (assumed to be numeric).
 **Example:**
 ```php
 $data = ['number' => 5];
-$string = "The result is: <<number>[mul(3)]>.";
+$string = "The result is: {{number}[mul(3)]}.";
 
 // Result: "The result is: 15."
 ```
@@ -123,7 +128,7 @@ Divides the token by the specified number (assumed to be numeric). Returns 0 if 
 **Example:**
 ```php
 $data = ['number' => 15];
-$string = "The result is: <<number>[div(3)]>.";
+$string = "The result is: {{number}[div(3)]}.";
 
 // Result: "The result is: 5."
 ```
@@ -135,7 +140,7 @@ Raises the token to the power of the specified number (assumed to be numeric).
 **Example:**
 ```php
 $data = ['number' => 2];
-$string = "The result is: <<number>[power(3)]>.";
+$string = "The result is: {{number}[power(3)]}.";
 
 // Result: "The result is: 8."
 ```
@@ -147,7 +152,7 @@ Converts the token to uppercase.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The uppercase word is: <<word>[upper()]>.";
+$string = "The uppercase word is: {{word}[upper()]}.";
 
 // Result: "The uppercase word is: HELLO."
 ```
@@ -159,7 +164,7 @@ Converts the token to lowercase.
 **Example:**
 ```php
 $data = ['word' => 'HELLO'];
-$string = "The lowercase word is: <<word>[lower()]>.";
+$string = "The lowercase word is: {{word}[lower()]}.";
 
 // Result: "The lowercase word is: hello."
 ```
@@ -171,7 +176,7 @@ Capitalizes the first character of the token while converting the rest to lowerc
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The capitalized word is: <<word>[capitalize()]>.";
+$string = "The capitalized word is: {{word}[capitalize()]}.";
 
 // Result: "The capitalized word is: Hello."
 ```
@@ -183,7 +188,7 @@ Replaces occurrences of the search string with the replacement string in the tok
 **Example:**
 ```php
 $data = ['sentence' => 'The quick brown fox'];
-$string = "The modified sentence is: <<sentence>[replace(quick, lazy)]>.";
+$string = "The modified sentence is: {{sentence}[replace(quick, lazy)]}.";
 
 // Result: "The modified sentence is: The lazy brown fox."
 ```
@@ -195,7 +200,7 @@ Returns the length of the token (number of characters).
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The length of the word is: <<word>[length()]>.";
+$string = "The length of the word is: {{word}[length()]}.";
 
 // Result: "The length of the word is: 5."
 ```
@@ -207,7 +212,7 @@ Concatenates the token with the specified string.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The concatenated word is: <<word>[concat( world)]>.";
+$string = "The concatenated word is: {{word}[concat( world)]}.";
 
 // Result: "The concatenated word is: hello world."
 ```
@@ -217,7 +222,7 @@ Use multiple expression at a time.
 **Example:**
 ```php
 $data = ['word' => 'hello'];
-$string = "The length of hello world is: <<word>[concat( world)][upper()][length()]>.";
+$string = "The length of hello world is: {{word}[concat( world)][upper()][length()]}.";
 
 // Result: "The length of hello world is: 11."
 ```

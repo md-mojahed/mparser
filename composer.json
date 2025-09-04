@@ -2,7 +2,7 @@
     "name": "mojahed/mparser",
     "description": "MParser is a powerful PHP package that simplifies parsing complex strings with custom tokens and expressions. With a flexible trait-based architecture, it enables effortless creation and extension of parsing functionality. Easily integrate MParser into your projects for efficient string processing and data extraction in a user-friendly manner.",
     "type": "library",
-    "version" : "1.0.0",
+    "version" : "2.0.0",
     "license": "MIT",
     "authors": [
         {
@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=8.1"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

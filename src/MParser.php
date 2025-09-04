@@ -5,8 +5,8 @@ require_once __DIR__.'/MParserTrait.php';
 
 class MParser {
     use MParserTrait;
-    private $token_pattern = '/<(\w+|<\w+>(\[\w+\(([0-9 a-z,\-\+:\$\#\@\|]+)?\)\])+)>/';
-    private $variable_pattern = '/<\w+>/';
+    private $token_pattern = '/\{(\w+|\{\w+\}(\[\w+\(([0-9 a-z,\-\+:\$\#\@\|]+)?\)\])+)\}/';
+    private $variable_pattern = '/\{\w+\}/';
     private $expression_pattern = '/(\[\w+\(([0-9 a-z,\-\+:\$\#\@\|]+)?\)\])/';
     private $method_pattern = '/\[\w+/';
     private $argument_pattern = '/\\(.*\)/';
@@ -26,7 +26,7 @@ class MParser {
         $matches = $this->_identify_all_token();
 
         usort($matches, function($a, $b) {
-            return strlen($b) > strlen($a);
+            return strlen($b) <=> strlen($a);
         });
 
         $queue = [];
